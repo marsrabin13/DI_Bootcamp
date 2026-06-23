@@ -17,6 +17,16 @@
 # 2. Create a program that generates a list of multiples of the given number.
 # 3. The list should stop when it reaches the length specified by the user.
 
+number = int(input("Enter an integer: "))
+length = int(input("Enter lenght of list: "))
+number_list = []
+
+for items in range(1,length+1):
+    number_list.append(number*items)
+    items+=1
+
+print(number_list)
+
 # Example 1:
 
 # Input:
@@ -68,8 +78,9 @@
 # For example, “ppoeemm” should become “poem” (removes consecutive duplicates like ‘pp’, ‘ee’, and ‘mm’).
 # 3. The program should print the modified string.
 
-
-
+str = input("Give a string: ")
+result = "".join(dict.fromkeys(str))
+print(result)
 # Example 1:
 
 # Input:
