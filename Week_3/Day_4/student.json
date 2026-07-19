@@ -1,0 +1,9 @@
+{
+    "name": "John",
+    "grade": [
+        85,
+        90,
+        78
+    ],
+    "graduated": false
+}
