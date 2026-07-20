@@ -103,4 +103,22 @@ class Pagination:
 # Pages are indexed internally from 0, but user input is expected to start at 1.
 # All navigation methods (except go_to_page) should return self to allow method chaining.
 
+#Test Cases:
 
+p = Pagination(list(range(1, 26)), page_size=5)
+print(p)                            # Page 1 of 5 | Items: [1, 2, 3, 4, 5]
+p.next_page().next_page()           # chain two advances
+print(p)                            # Page 3 of 5 | Items: [11, 12, 13, 14, 15]
+p.previous_page()
+print(p)                            # Page 2 of 5 | Items: [6, 7, 8, 9, 10]
+
+# Edge cases
+p2 = Pagination([1, 2, 3], page_size=5)
+print(p2.total_pages())             # 1 (math.ceil(3/5) = 1)
+p2.next_page()                      # "Already on last page."
+
+# ValueError
+try:
+    Pagination([1, 2, 3], page_size=0)
+except ValueError as e:
+    print(e)
