@@ -13,7 +13,7 @@ sampleJson = """{
 }"""
 
 
-
+#Parse the JSON string using json.loads()
 data = json.loads(sampleJson) #load string to dictionary
 
 print(f"Salary: {data['company']['employee']['payable']['salary']}")
